@@ -7,19 +7,25 @@
 
 .include "helpermacro.asm"
 
-
-
-.orga filesize("bn3.gba")
+; Offset where all the new titlescreen data will be inserted.
+; If you want to insert at the end of the ROM, you can use
+; the `.orga filesize(rom)` statement, and the ROM will be automatically
+; expanded to fit the new data.
+; But if you want to insert at a specific location, you can use `.org {offset}`
+; ex.: `.org 0x087FFBC4`
+.orga filesize(rom)
 .align 4
+
 GameTitleTiles:
-.incbin "compresstilestitle.bin"
+.lz77gba "tilestitle.bin"
+.align 4
 GameTitleMap:
 .incbin "tilemaptitle.bin"
 titlepal:
 .incbin "titlepal.bin"
 .align 4
 PalaxCompressedTiles:
-.incbin "compresspalaxtiles.bin"
+.lz77gba "palaxtiles.bin"
 .align 4
 PalaxPal:
 .incbin "palixpal.bin"
