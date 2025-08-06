@@ -18,7 +18,8 @@ mov r1,r10
 ldr r1,[r1,0x10]
 add r1,0x1C
 mov r2,0x1
-.dh 0xDF0E
+swi 0xE
+;.dh 0xDF0E
 pop r15
 .pool
 @@PhaseTimes:

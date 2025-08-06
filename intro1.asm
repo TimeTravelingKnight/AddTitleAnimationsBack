@@ -1,7 +1,7 @@
 
 initCounter equ 0x1741
-centerX equ 0x60
-centerY equ 0x44
+centerX equ 127;0x60
+centerY equ 30;0x44
 screenYRegister equ 0x50
 
 .align 4

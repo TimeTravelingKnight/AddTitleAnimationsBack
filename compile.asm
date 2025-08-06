@@ -3,7 +3,7 @@
 .gba
 
 
-.openfile rom,"patched"+rom,0x8000000
+.openfile rom,"output/patched"+rom,0x8000000
 
 .include "helpermacro.asm"
 
@@ -12,19 +12,22 @@
 .orga filesize("bn3.gba")
 .align 4
 GameTitleTiles:
-.incbin "compresstilestitle.bin"
+.incbin "word.img.bin"
+;.incbin "compresstilestitle.bin"
 GameTitleMap:
-.incbin "tilemaptitle.bin"
+.incbin "word2.map.bin"
+;.incbin "tilemaptitle.bin"
 titlepal:
-.incbin "titlepal.bin"
+.incbin "word.pal.bin"
+;.incbin "titlepal.bin"
 .align 4
 PalaxCompressedTiles:
-.incbin "compresspalaxtiles.bin"
+.incbin "Palaxfiles/compresspalaxtiles.bin"
 .align 4
 PalaxPal:
-.incbin "palixpal.bin"
+.incbin "Palaxfiles/palixpal.bin"
 PalixMap:
-.incbin "PalixMap.bin"
+.incbin "Palaxfiles/PalixMap.bin"
 
 .align 4
 .include "AddTilesandMaps.asm"
