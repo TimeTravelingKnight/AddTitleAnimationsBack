@@ -9,7 +9,7 @@
 
 
 
-.orga filesize("bn3.gba")
+.orga filesize(rom)
 .align 4
 GameTitleTiles:
 .incbin "word.img.bin"
