@@ -14,12 +14,17 @@
 GameTitleTiles:
 .incbin "word.img.bin"
 ;.incbin "compresstilestitle.bin"
+.align 4
 GameTitleMap:
 .incbin "word2.map.bin"
 ;.incbin "tilemaptitle.bin"
+.align 2
 titlepal:
 .incbin "word.pal.bin"
 ;.incbin "titlepal.bin"
+
+
+
 .align 4
 PalaxCompressedTiles:
 .incbin "Palaxfiles/compresspalaxtiles.bin"

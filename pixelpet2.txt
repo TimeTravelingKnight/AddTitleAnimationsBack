@@ -1,0 +1,12 @@
+Import-Bitmap "word.png"
+Convert-Bitmap GBA
+Extract-Palettes 
+Pad-Palettes 216
+Pad-Tileset 0x38
+Generate-Tilemap GBA-Affine
+Serialize-Tilemap
+Export-Bytes "word.map.bin"
+Serialize-Tileset
+Export-Bytes "word.img.bin"
+Serialize-Palettes
+Export-Bytes "word.pal.bin"
