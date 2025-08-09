@@ -1,0 +1,9 @@
+Import-Bitmap "stubs/jap.png"
+Extract-Palettes --palette-size 256
+Generate-Tilemap GBA-8BPP
+
+Render-Tileset --tiles-per-row 16
+Export-Bitmap "stubs/tilesjap.png"
+
+Serialize-Tilemap --base-tile 56 --first-tile 56
+Export-Bytes "tilemapjap.bin"

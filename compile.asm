@@ -2,9 +2,17 @@
 
 .gba
 
-
 .openfile rom,"patched"+rom,0x8000000
 
+; Inserting titlescreen's modified palette
+.org 0x087FBED0
+.incbin "jappal.bin"
+
+; Inserting titlescreen's tilemap
+.org 0x087FF6C4
+.incbin "tilemapjap.bin"
+
+; Add titlescreen animations back (parallax and zoomed logo)
 .include "helpermacro.asm"
 
 ; Offset where all the new titlescreen data will be inserted.
@@ -23,6 +31,9 @@ GameTitleMap:
 .incbin "tilemaptitle.bin"
 titlepal:
 .incbin "titlepal.bin"
+.align 4
+NewGameTitle:
+.lz77gba "tilesjap.bin"
 .align 4
 PalaxCompressedTiles:
 .lz77gba "palaxtiles.bin"

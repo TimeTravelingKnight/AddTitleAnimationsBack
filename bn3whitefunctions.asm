@@ -6,7 +6,6 @@ uncompressed equ 0x8132638
 DMAWriteCHannel  equ 0x80009C8
 WaitForDMAToFinish equ 0x80009F4
 DMAWriteChannel0 equ 0x8000A34
-GameTitle equ 0x87FC0D0
 GameTitlePal equ 0x87FBED0
 GameTileOgMap equ 0x87FF6C4
 BeginTitle1 equ 0x8021FC4
