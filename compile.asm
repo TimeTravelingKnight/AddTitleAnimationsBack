@@ -84,9 +84,9 @@ PalaxCompressedTiles:
 .lz77gba "palaxtiles.bin"
 .align 4
 PalaxPal:
-.incbin "palixpal.bin"
+.incbin "Palaxfiles/palixpal.bin"
 PalixMap:
-.incbin "PalixMap.bin"
+.incbin "Palaxfiles/PalixMap.bin"
 
 .align 4
 .include "AddTilesandMaps.asm"
