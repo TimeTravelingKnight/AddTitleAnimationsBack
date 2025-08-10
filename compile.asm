@@ -5,12 +5,45 @@
 .openfile rom,"patched"+rom,0x8000000
 
 ; Inserting titlescreen's modified palette
-.org 0x087FBED0
-.incbin "jappal.bin"
+.org GameTitlePal
+.if gamever == 0
+    .if alternatetitle == 0
+        .incbin "whitepal.bin"
+    .else
+        .incbin "jappal.bin"
+    .endif
+.else
+    .if alternatetitle == 0
+        .incbin "bluepal.bin"
+    .else
+        .incbin "japblackpal.bin"
+    .endif
+.endif
 
 ; Inserting titlescreen's tilemap
-.org 0x087FF6C4
-.incbin "tilemapjap.bin"
+.org GameTileOgMap
+.if gamever == 0
+    .if alternatetitle == 0
+        .incbin "tilemapwhite.bin"
+    .else
+        .incbin "tilemapjap.bin"
+    .endif
+.else
+    .if alternatetitle == 0
+        .incbin "tilemapblue.bin"
+    .else
+        .incbin "tilemapjapblack.bin"
+    .endif
+.endif
+
+; If dealing with the "Jap Black" alternate titlescreen,
+; editing blue tones of the copyright sprites to dark green
+.if gamever == 1
+    .if alternatetitle == 1
+        .org 0x087FB930
+            .stringn 0x00,0x00,0x52,0x3E,0xBD,0x77,0x17,0x57
+    .endif
+.endif
 
 ; Add titlescreen animations back (parallax and zoomed logo)
 .include "helpermacro.asm"
@@ -33,7 +66,19 @@ titlepal:
 .incbin "titlepal.bin"
 .align 4
 NewGameTitle:
-.lz77gba "tilesjap.bin"
+.if gamever == 0
+    .if alternatetitle == 0
+        .lz77gba "tileswhite.bin"
+    .else
+        .lz77gba "tilesjap.bin"
+    .endif
+.else
+    .if alternatetitle == 0
+        .lz77gba "tilesblue.bin"
+    .else
+        .lz77gba "tilesjapblack.bin"
+    .endif
+.endif
 .align 4
 PalaxCompressedTiles:
 .lz77gba "palaxtiles.bin"

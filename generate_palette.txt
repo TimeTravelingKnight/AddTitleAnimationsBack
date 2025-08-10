@@ -1,0 +1,7 @@
+Import-Bitmap "stubs/japblack.png"
+Convert-Bitmap GBA
+Extract-Palettes --palette-size 208
+Generate-Tilemap GBA-8BPP
+
+Serialize-Palettes
+Export-Bytes "japblackpal2.bin"
