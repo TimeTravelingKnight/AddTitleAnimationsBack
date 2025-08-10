@@ -1,7 +1,7 @@
 .if fileexists(rom)
 
 
-.if  gamever == 0
+.if gamever == 0
 .include "bn3whitefunctions.asm"
 .include "compile.asm"
 

@@ -34,9 +34,9 @@ ldrh r0,[r5,0x4]
 sub r0,0x4
 strh r0,[r5,0x4]
 blt @@NextPhase
-mov r6,centerX;0x60
+mov r6,0x60
 strh r6,[r5,0x20]
-mov r7,centerY+4;0x44
+mov r7,0x44
 strh r7,[r5,0x22]
 ldrh r0,[r5,0x4]
 lsl r0,r0,1
@@ -81,14 +81,14 @@ push r14
 BXwithR11 checkifScreenBrightNessChanged|1
 beq @@Escape
 
-ldr r0,=GameTitle
+ldr r0,=NewGameTitle
 ldr r1,=0x2010800
 swi 0x11
 ;.dh 0xDF11
 ;BXwithR11 uncompressed|1
 ldr r0,=0x2010800
 ldr r1,=0x6000E00
-ldr r2,=GameTitle
+ldr r2,=NewGameTitle
 ldr r2,[r2]
 lsr r2,r2,0xA
 mov r3,3

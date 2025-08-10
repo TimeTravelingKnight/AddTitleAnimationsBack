@@ -1,8 +1,7 @@
 
 initCounter equ 0x1741
-centerX equ 127;0x60
-centerY equ 30;0x44
-screenYRegister equ 0x50
+centerX equ 0x60
+centerY equ 0x44
 
 .align 4
 StartUpMatrix:
@@ -21,7 +20,7 @@ mov r0,centerX
 add r0,0xF0
 add r0,0xF0
 strh r0,[r5,0x20]
-mov r0, screenYRegister
+mov r0,0x78
 strh r0,[r5,0x22]
 mov r0,0x8
 lsl r0,r0,0x4
