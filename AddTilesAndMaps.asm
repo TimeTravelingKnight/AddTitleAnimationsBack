@@ -13,7 +13,8 @@ strh r1,[r0,0x1A]
 
 ldr r0,=PalaxCompressedTiles
 ldr r1,=0x2010800
-.dh 0xDF11
+swi 0x11
+;.dh 0xDF11
 ;BXwithR11 uncompressed|1
 ldr r0,=0x2010800
 ldr r1,=0x6000040
