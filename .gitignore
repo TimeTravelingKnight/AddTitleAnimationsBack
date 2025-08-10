@@ -1,6 +1,5 @@
 *.gba
 *.sav
-*.exe
 output/
 oldfiles/
 *.dll
