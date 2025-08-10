@@ -1,7 +1,7 @@
-Import-Bitmap "stubs/japblack.png"
+Import-Bitmap "stubs/spinning_logo.png"
 Convert-Bitmap GBA
 Extract-Palettes --palette-size 208
 Generate-Tilemap GBA-8BPP
 
 Serialize-Palettes
-Export-Bytes "japblackpal2.bin"
+Export-Bytes "titlepal2.bin"
